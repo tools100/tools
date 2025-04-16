@@ -622,17 +622,55 @@
         
         <h2 class="section-title" id="qr-tools">QR Code Tools</h2>
         <div class="tools-grid">
-            <div class="tool-card">
-                <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="QR Code Generator" class="tool-card-img">
-                <span class="tool-badge">Popular</span>
-                <div class="tool-content">
-                    <h3>QR Code Generator</h3>
-                    <p>Create customizable QR codes for URLs, text, contacts and more with colors and logos.</p>
-                    <a href="qr-generator.html" class="tool-btn">
-                        <i class="fas fa-arrow-right"></i> Use Tool
-                    </a>
-                </div>
-            </div>
+           <a href="qr-generator.html" class="tool/qr-scanner.html">
+    <div class="tool-card">
+        <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="QR Code Generator" class="tool-card-img">
+        <span class="tool-badge">Popular</span>
+        <div class="tool-content">
+            <h3>QR Code Generator</h3>
+            <p>Create customizable QR codes for URLs, text, contacts and more with colors and logos.</p>
+            <span class="tool-btn">
+                <i class="fas fa-arrow-right"></i> Use Tool
+            </span>
+        </div>
+    </div>
+</a>
+
+<style>
+    .tool-card-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .tool-card-link:hover {
+        transform: translateY(-5px);
+    }
+    
+    .tool-card-link:hover .tool-card {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .tool-card-link:hover .tool-btn {
+        background: #3a56d4;
+    }
+    
+    /* Change the button from <a> to <span> since it's now inside a link */
+    .tool-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #4361ee;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: background 0.3s ease;
+    }
+</style>
             
             <div class="tool-card">
                 <img src="https://images.unsplash.com/photo-1586769852836-bc069f74e9e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="QR Code Scanner" class="tool-card-img">
