@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online QR Code Generator. Create custom QR codes for websites, text, contacts, WiFi and more. No registration required.">
+    <meta name="keywords" content="QR code generator, free QR code, create QR code, QR code maker">
+    <title>Free QR Code Generator | Create Custom QR Codes Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #4285f4;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .generator-section, .result-section {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            flex: 1;
+            min-width: 300px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #3367d6;
+        }
+        #qrCode {
+            margin: 20px auto;
+            text-align: center;
+        }
+        #qrCode img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #eee;
+            padding: 10px;
+            background: white;
+        }
+        .download-options {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        .download-btn {
+            background-color: #34a853;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .download-btn:hover {
+            background-color: #2d9249;
+        }
+        .ad-container {
+            background: #f1f1f1;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+            border-radius: 4px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .main {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>QR Code Generator</h1>
+            <p>Create custom QR codes in seconds - free and easy to use</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Top Ad Placement -->
+        <div class="ad-container">
+            <!-- Replace with your AdSense code -->
+            <p>Advertisement</p>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"></script>
+            <!-- QR Top Banner -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                 data-ad-slot="YOUR_AD_SLOT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="main">
+            <div class="generator-section">
+                <h2>Create QR Code</h2>
+                <form id="qrForm">
+                    <div class="form-group">
+                        <label for="qrContent">Enter text or URL:</label>
+                        <textarea id="qrContent" rows="3" placeholder="https://example.com or any text" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="qrColor">QR Code Color:</label>
+                        <input type="color" id="qrColor" value="#000000">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bgColor">Background Color:</label>
+                        <input type="color" id="bgColor" value="#ffffff">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="qrSize">Size:</label>
+                        <select id="qrSize">
+                            <option value="200">200x200</option>
+                            <option value="300">300x300</option>
+                            <option value="400">400x400</option>
+                        </select>
+                    </div>
+                    
+                    <button type="button" id="generateBtn">Generate QR Code</button>
+                </form>
+            </div>
+            
+            <div class="result-section">
+                <h2>Your QR Code</h2>
+                <div id="qrCode">
+                    <p>Your QR code will appear here</p>
+                </div>
+                
+                <div class="download-options" id="downloadOptions" style="display:none;">
+                    <a href="#" class="download-btn" id="downloadPNG">Download PNG</a>
+                    <a href="#" class="download-btn" id="downloadJPG">Download JPG</a>
+                </div>
+                
+                <!-- Side Ad Placement -->
+                <div class="ad-container" style="margin-top: 30px;">
+                    <!-- Replace with your AdSense code -->
+                    <p>Advertisement</p>
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"></script>
+                    <!-- QR Side Banner -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                         data-ad-slot="YOUR_AD_SLOT_ID"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mid Content Ad -->
+        <div class="ad-container">
+            <!-- Replace with your AdSense code -->
+            <p>Advertisement</p>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"></script>
+            <!-- QR Mid Banner -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                 data-ad-slot="YOUR_AD_SLOT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <div style="background: white; padding: 20px; border-radius: 8px; margin-top: 20px;">
+            <h2>How to Use This QR Code Generator</h2>
+            <ol>
+                <li>Enter the text or URL you want to encode in the input box</li>
+                <li>Customize the colors and size if desired</li>
+                <li>Click "Generate QR Code"</li>
+                <li>Download your QR code in PNG or JPG format</li>
+            </ol>
+            
+            <h2 style="margin-top: 20px;">What Can You Use QR Codes For?</h2>
+            <ul>
+                <li>Website URLs</li>
+                <li>Contact information</li>
+                <li>WiFi network sharing</li>
+                <li>Product information</li>
+                <li>Event details</li>
+                <li>Promotional offers</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> QR Code Generator. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Generate QR Code
+        document.getElementById('generateBtn').addEventListener('click', function() {
+            const content = document.getElementById('qrContent').value.trim();
+            if (!content) {
+                alert('Please enter some text or URL');
+                return;
+            }
+            
+            const color = document.getElementById('qrColor').value.substring(1); // Remove #
+            const bgColor = document.getElementById('bgColor').value.substring(1); // Remove #
+            const size = document.getElementById('qrSize').value;
+            
+            // Clear previous QR code
+            const qrCodeDiv = document.getElementById('qrCode');
+            qrCodeDiv.innerHTML = '';
+            
+            // Generate new QR code
+            QRCode.toCanvas(qrCodeDiv, content, {
+                color: {
+                    dark: `#${color}`,
+                    light: `#${bgColor}`
+                },
+                width: parseInt(size),
+                margin: 1
+            }, function(error) {
+                if (error) {
+                    console.error(error);
+                    alert('Error generating QR code. Please try again.');
+                    return;
+                }
+                
+                // Show download options
+                const downloadOptions = document.getElementById('downloadOptions');
+                downloadOptions.style.display = 'flex';
+                
+                // Set download links
+                const canvas = qrCodeDiv.querySelector('canvas');
+                const pngUrl = canvas.toDataURL('image/png');
+                const jpgUrl = canvas.toDataURL('image/jpeg');
+                
+                document.getElementById('downloadPNG').href = pngUrl;
+                document.getElementById('downloadPNG').download = 'qrcode.png';
+                
+                document.getElementById('downloadJPG').href = jpgUrl;
+                document.getElementById('downloadJPG').download = 'qrcode.jpg';
+            });
+        });
+    </script>
+</body>
+</html>
